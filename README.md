@@ -1,6 +1,12 @@
-# AutoAdv: 멀티턴 자동 적대적 프롬프팅 프레임워크
+# AutoAdv-Ko: 한국어 기반 멀티턴 자동 적대적 프롬프팅 프레임워크
 
-LLM의 안전성을 평가하기 위한 자동화된 멀티턴 탈옥(jailbreaking) 프레임워크.
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/release/python-3110/)
+[![Based on AutoAdv](https://img.shields.io/badge/Based%20on-AutoAdv-orange.svg)](https://github.com/AAN-AutoAdv/AutoAdv)
+
+**AutoAdv-Ko**는 [AutoAdv](https://github.com/AAN-AutoAdv/AutoAdv) ([arXiv:2511.02376](https://arxiv.org/abs/2511.02376)) 연구를 계승하고 확장한 **한국어 특화 멀티턴 자동 적대적 프롬프팅(Adversarial Prompting) 프레임워크**입니다. 
+
+기존의 안전성 평가는 주로 단일 턴(Single-turn) 대화에 집중되어 있지만, 실제 위협은 공격자와 모델 간의 적응형 멀티턴 대화를 통해 발생합니다. AutoAdv-Ko는 한국어의 언어적 특성과 사회적 맥락을 반영하여, LLM의 안전성 메커니즘을 체계적으로 테스트하고 강화하기 위한 자동화된 도구를 제공합니다.
+
 
 ## 동작 원리
 
@@ -8,8 +14,8 @@ LLM의 안전성을 평가하기 위한 자동화된 멀티턴 탈옥(jailbreaki
 ┌─────────────┐     재작성된 프롬프트     ┌─────────────┐
 │  Attacker   │ ────────────────────▶ │   Target    │
 │  (GPT-4o    │                       │  (평가 대상   │
-│   mini 등)   │ ◀──────────────────── │   모델)     │
-└─────────────┘     타겟 응답            └────────────┘
+│   mini 등)   │ ◀──────────────────── │   모델)      │
+└─────────────┘       타겟 응답         └─────────────┘
        │                                       │
        │  시스템 프롬프트                        │  응답
        │  (기법 + 예시)                         ▼
