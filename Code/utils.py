@@ -121,7 +121,7 @@ def strip_disclaimers(text):
 
     original_length = len(text)
     for pattern in DISCLAIMER_PATTERNS:
-        text = re.sub(pattern, '', text, flags=re.DOTALL)
+        text = re.sub(pattern, '', text, flags=re.DOTALL | re.MULTILINE)
     
     text = text.strip()
     
